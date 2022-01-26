@@ -5,7 +5,7 @@ import pickle
 import random
 import copy
 
-server = "192.168.0.103"
+server = "192.168.0.100"
 port = 5555
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -254,7 +254,7 @@ def threaded_client(connection):
                             g.deal_sum -= 10
                         print(g.deal_sum, g.player_sum)
                     if maxi >= g.deal_sum or g.deal_sum > 21:
-                        indices = [i for i, x in enumerate(g.player_sum) if x == max(g.player_sum)]
+                        indices = [i for i, x in enumerate(g.player_sum) if x == maxi]
                         for k, v in cplayer_names.items():
                             if v in indices:
                                 g.winners.append(k)
